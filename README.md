@@ -4,7 +4,7 @@ This documentation provides details about the Quiz API endpoints and their funct
 
 ## Base URL
 
-The base URL for all API endpoints is `http://localhost:8000/`. Replace `localhost` and `8000` with the appropriate host and port if you're running the API on a different server.
+The base URL for all API endpoints is `https://main-quiz.onrender.com/`. 
 
 ## Endpoints
 
@@ -20,15 +20,15 @@ The base URL for all API endpoints is `http://localhost:8000/`. Replace `localho
 
 ```json
 {
-  "question": "What is the capital of France?",
+  "question": "Your_question_here",
   "options": [
-    "London",
-    "Paris",
-    "Berlin",
-    "Rome"
+    "Option_1",
+    "Option_2",
+    "Option_3",
+    "Option_4"
   ],
-  "rightAnswer": 1,
-  "startDate": "2023-06-01T09:00:00Z",
+  "rightAnswer": 1, <---(Index of correct option)
+  "startDate": "2023-06-01T09:00:00Z", <---(June 1, 2023 - 9 a.m. | UTC time zone | Format: `YYYY-MM-DDTHH:MM:SSZ`)
   "endDate": "2023-06-01T10:00:00Z"
 }
 ```
@@ -47,14 +47,14 @@ The base URL for all API endpoints is `http://localhost:8000/`. Replace `localho
 
 **Response**:
 - Status Code: 200 (OK)
-- Body: JSON object representing the active quiz.
+- Body: JSON objects representing the active quizzes.
 
 
 ### Get Specific Active Quiz by ID
 
 **URL:** `/quizzes/active/{quiz_id}/`
 
-**Method:** GET 
+**Method:** `GET`
 
 **Description:** Retrieve a specific active quiz by its ID.
 
