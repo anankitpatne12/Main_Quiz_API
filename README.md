@@ -6,6 +6,8 @@ This documentation provides details about the Quiz API endpoints and their funct
 
 The base URL for all API endpoints is `https://main-quiz.onrender.com/`. 
 
+(Due to the initial setup and configuration process on the platform where I hosted the API, it is possible that the API may take approximately 30-40 seconds to fully load upon the first visit. Rest assured, this delay is temporary and subsequent access to the API will work seamlessly and without any noticeable delay.)
+
 ## Endpoints
 
 ### Create a Quiz
