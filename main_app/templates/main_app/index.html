@@ -1,47 +1,53 @@
-{% comment %} This is just a test file -- if we need a front end, we can use Django templates to interact with the API {% endcomment %}
-
-{% comment %} {% load static %}
-
-{% comment %} <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Quiz App</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <style>
-
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    .container {
-      max-width: 500px;
-    }
-    .quiz-option {
-      margin-bottom: 10px;
-    }
-  </style>
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Quiz App</h1>
-  
-    <div id="quizContainer">
-      <h2>{{ quiz.question }}</h2>
-      {% for option in quiz.options %}
-        <div class="quiz-option">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="answer" value="{{ forloop.counter0 }}">
-            {{ option }}
-          </label>
+    <div class="container">
+        <h1>Some basic info to get started...</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+              <h2><b>Endpoints:</b></h2> 
+                <article>
+                  
+                
+                  <h3>Create a Quiz</h3>
+                  <p><strong>URL:</strong> /quizzes/</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Description:</strong> Creates a new quiz.</p>
+                
+                  <h3>Get Active Quizzes</h3>
+                  <p><strong>URL:</strong> /quizzes/active/</p>
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Description:</strong> Retrieves all the active quizzes.</p>
+                
+                  <h3>Get Specific Active Quiz by ID</h3>
+                  <p><strong>URL:</strong> /quizzes/active/{quiz_id}/</p>
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Description:</strong> Retrieve a specific active quiz by its ID.</p>
+                
+                  <h3>Get Quiz Result</h3>
+                  <p><strong>URL:</strong> /quizzes/{quiz_id}/result/</p>
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Description:</strong> Retrieves the result of a quiz by its ID.</p>
+                
+                  <h3>Get All Quizzes</h3>
+                  <p><strong>URL:</strong> /quizzes/all/</p>
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Description:</strong> Retrieves all quizzes.</p>
+                
+                </article>
+                
+            </div>
+            <div class="col-md-6">
+                <h3>GitHub Repository</h3>
+                <p>Visit the GitHub repository for more information and source code:</p>
+                <a href="{{ github_repo }}" target="_blank" class="btn btn-primary">GitHub Repo</a>
+            </div>
         </div>
-      {% endfor %}
     </div>
-
-    <button id="submitBtn" class="btn btn-primary">Submit Answer</button>
-  </div> {% endcomment %}
-  
-  {% comment %} <script src="{% static 'script.js' %}"></script> {% endcomment %}
-  {% comment %} <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-</html> {% endcomment %}
+</html>

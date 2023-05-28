@@ -4,6 +4,7 @@ from .serializers import QuizSerializer
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
+from django.shortcuts import render
 
 
 """
@@ -12,7 +13,10 @@ from django.utils import timezone
 #     return render(request, 'main_app/index.html', {'quiz': active_quiz})
 """
 
-
+def documentation_view(request):
+    documentation = "<Your API Documentation>"
+    github_repo = "https://github.com/anankitpatne12/Main_Quiz_API.git"
+    return render(request, 'main_app/index.html', {'documentation': documentation, 'github_repo': github_repo})
 
 class QuizCreateView(generics.CreateAPIView):  # create quiz
     queryset = Quiz.objects.all()
