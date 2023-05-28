@@ -13,10 +13,9 @@ from django.shortcuts import render
 #     return render(request, 'main_app/index.html', {'quiz': active_quiz})
 """
 
-def documentation_view(request):
-    documentation = "<Your API Documentation>"
+def documentation_view(request):  # A simple view for home page
     github_repo = "https://github.com/anankitpatne12/Main_Quiz_API.git"
-    return render(request, 'main_app/index.html', {'documentation': documentation, 'github_repo': github_repo})
+    return render(request, 'main_app/index.html', { 'github_repo': github_repo})
 
 class QuizCreateView(generics.CreateAPIView):  # create quiz
     queryset = Quiz.objects.all()
